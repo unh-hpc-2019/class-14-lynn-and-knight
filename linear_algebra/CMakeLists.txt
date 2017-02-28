@@ -11,7 +11,8 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_library(linalg linear_algebra.h
   vector.c vector_dot.c vector_add.c
-  matrix.c matrix_vector_mul.c matrix_matrix_mul.c)
+  matrix.c matrix_vector_mul.c matrix_matrix_mul.c
+  matrix_vector_mul_f.F)
 target_compile_features(linalg PUBLIC c_std_99)
 
 link_libraries(linalg)
