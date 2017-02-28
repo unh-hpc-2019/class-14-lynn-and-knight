@@ -23,6 +23,7 @@ add_executable(test_data_layout
   test_data_layout.c print_matrix_fortran.F)
 add_executable(test_data_layout_fortran
   test_data_layout_fortran.F print_matrix_fortran.F)
+add_executable(large_matrix_vector_mul large_matrix_vector_mul.c)
 
 add_test(test_vector_dot test_vector_dot)
 add_test(test_vector_add test_vector_add)
