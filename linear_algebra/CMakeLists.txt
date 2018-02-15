@@ -6,14 +6,16 @@ enable_testing()
 
 add_library(linalg linear_algebra.h
   vector.c vector_dot.c vector_add.c
-  matrix.c matrix_vector_mul.c)
+  matrix.c matrix_vector_mul.c matrix_matrix_mul.c)
 
 link_libraries(linalg)
 add_executable(test_vector_dot test_vector_dot.c)
 add_executable(test_vector_add test_vector_add.c)
 add_executable(test_matrix_vector_mul test_matrix_vector_mul.c)
+add_executable(test_matrix_matrix_mul test_matrix_matrix_mul.c)
 
 add_test(test_vector_dot test_vector_dot)
 add_test(test_vector_add test_vector_add)
 add_test(test_matrix_vector_mul test_matrix_vector_mul)
+add_test(test_matrix_matrix_mul test_matrix_matrix_mul)
 
