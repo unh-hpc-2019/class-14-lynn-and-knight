@@ -5,7 +5,7 @@ project (LinearAlgebra)
 enable_testing()
 
 add_library(linalg linear_algebra.h
-  vector_dot.c vector_add.c
+  vector.c vector_dot.c vector_add.c
   matrix_vector_mul.c)
 
 link_libraries(linalg)
