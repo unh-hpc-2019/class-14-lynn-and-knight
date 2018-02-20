@@ -14,6 +14,7 @@ add_executable(test_vector_dot test_vector_dot.c)
 add_executable(test_vector_add test_vector_add.c)
 add_executable(test_matrix_vector_mul test_matrix_vector_mul.c)
 add_executable(test_matrix_matrix_mul test_matrix_matrix_mul.c)
+add_executable(test_data_layout test_data_layout.c)
 
 add_test(test_vector_dot test_vector_dot)
 add_test(test_vector_add test_vector_add)
