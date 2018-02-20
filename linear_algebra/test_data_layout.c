@@ -1,4 +1,6 @@
 
+#include "config.h"
+
 #include <stdio.h>
 
 #define N 3
@@ -35,7 +37,9 @@ print_matrix_double_pointer(double **A)
   }
 }
 
-void print_matrix_(double *A);
+#define print_matrix_F77 F77_FUNC_(print_matrix, PRINT_MATRIX)
+
+void print_matrix_F77(double *);
 
 int
 main(int argc, char **argv)
@@ -56,7 +60,7 @@ main(int argc, char **argv)
   printf("\n");
 
   printf("print_matrix (fortran):\n");
-  print_matrix_((double *)A);
+  print_matrix_F77((double *) A);
   printf("\n");
 
   return 0;
