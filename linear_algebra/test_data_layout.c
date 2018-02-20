@@ -35,6 +35,8 @@ print_matrix_double_pointer(double **A)
   }
 }
 
+void print_matrix_(double *A);
+
 int
 main(int argc, char **argv)
 {
@@ -51,6 +53,10 @@ main(int argc, char **argv)
 
   printf("print_matrix_linear:\n");
   print_matrix_linear((double *) A, N*M);
+  printf("\n");
+
+  printf("print_matrix (fortran):\n");
+  print_matrix_((double *)A);
   printf("\n");
 
   return 0;
