@@ -3,9 +3,9 @@
 
 This repo will contain the starter code for various exercises / assignments.
 
-## Class 8
+# Class 10
 
-testing and debugging
-
+This repository contains the starter code for class 10, in the
+`linear_algebra` subdirectory.
 
 
