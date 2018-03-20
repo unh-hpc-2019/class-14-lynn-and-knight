@@ -36,7 +36,7 @@ vector_init_sines(struct vector *crd, struct vector *v)
 int
 main(int argc, char **argv)
 {
-  const int N = 100;
+  const int N = 1000000;
 
   // node-centered coordinates
   struct vector *crd_nc = vector_create_crd_nc(N + 1, 2. * M_PI);
@@ -44,7 +44,7 @@ main(int argc, char **argv)
   // a sample function on the node-centered grid
   struct vector *x_nc = vector_create(N + 1);
   vector_init_sines(crd_nc, x_nc);
-  vector_write(crd_nc, x_nc, "x_nc.asc");
+  //vector_write(crd_nc, x_nc, "x_nc.asc");
 
   // cell-centered coordinates
   // There's one less cell center than there are nodes (N+1 -> N);
@@ -53,6 +53,12 @@ main(int argc, char **argv)
   // the vector for our averaged-to-cell-centers result
   struct vector *x_cc = vector_create(N);
 
-  vector_average(x_cc, x_nc);
-  vector_write(crd_cc, x_cc, "x_cc.asc");
+  double t_beg = Wtime();
+  for (int n = 0; n < 1000; n++) {
+    vector_average(x_cc, x_nc);
+  }
+  double t_end = Wtime();
+  printf("1000x vector_average took %g s\n", t_end - t_beg);
+
+  //vector_write(crd_cc, x_cc, "x_cc.asc");
 }
