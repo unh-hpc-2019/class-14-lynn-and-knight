@@ -3,7 +3,7 @@
 
 This repo will contain the starter code for various exercises / assignments.
 
-## Class 3
+## Class 5
 
-Splitting up code into separate source files, building code, ...
+make and Makefiles
 
