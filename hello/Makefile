@@ -1,16 +1,18 @@
 
+CC = gcc
+CFLAGS = -Wall
 
 hello: hello.o greeting.o factorial.o
-	gcc hello.o greeting.o factorial.o -o hello
+	$(CC) hello.o greeting.o factorial.o -o hello
 
 hello.o: hello.c
-	gcc -Wall -c hello.c
+	$(CC) $(CFLAGS) -c hello.c
 
 greeting.o: greeting.c
-	gcc -Wall -c greeting.c
+	$(CC) $(CFLAGS) -c greeting.c
 
 factorial.o: factorial.c
-	gcc -Wall -c factorial.c
+	$(CC) $(CFLAGS) -c factorial.c
 
 
 #TARGET: PREREQ1 PREREQ2 ....
