@@ -29,6 +29,10 @@ dnl if test -z "$CXX" || test "X$CXX" = "Xno"; then
 dnl   AC_MSG_ERROR([No suitable C++ compiler found])
 dnl fi
 
+# for library support
+AC_PROG_RANLIB
+m4_ifdef([AM_PROG_AR], [AM_PROG_AR])
+
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT
