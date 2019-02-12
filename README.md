@@ -3,7 +3,7 @@
 
 This repo will contain the starter code for various exercises / assignments.
 
-## Class 5
+## Class 7
 
-make and Makefiles
+autotools
 
