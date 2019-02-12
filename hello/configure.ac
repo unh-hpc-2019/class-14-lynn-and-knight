@@ -14,6 +14,9 @@ if test -z "$CC" || test "$CC" = "no"; then
 fi
 AM_PROG_CC_C_O
 
+# add -Wall if possible
+AX_CHECK_COMPILER_FLAGS([-Wall], [CFLAGS="$CFLAGS -Wall"])
+
 dnl For Fortran support, uncomment (remove "dnl") the following
 dnl AC_PROG_F77
 dnl if test -z "$F77" || test "X$F77" = "Xno"; then
