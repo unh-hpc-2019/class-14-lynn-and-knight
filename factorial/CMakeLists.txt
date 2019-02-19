@@ -5,3 +5,7 @@ project (Factorial)
 
 add_library(stuff factorial.c)
 
+add_executable(test_factorial test_factorial.c)
+target_link_libraries(test_factorial stuff)
+
+
