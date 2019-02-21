@@ -3,7 +3,11 @@ cmake_minimum_required (VERSION 2.6)
 
 project (LinearAlgebra)
 enable_testing()
+
 enable_language(Fortran)
+include(FortranCInterface)
+FortranCInterface_HEADER(FC.h MACRO_NAMESPACE "FC_")
+include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_library(linalg linear_algebra.h
   vector.c vector_dot.c vector_add.c

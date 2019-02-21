@@ -1,5 +1,5 @@
 
-#include "config.h"
+#include "FC.h"
 
 #include <stdio.h>
 
@@ -37,7 +37,7 @@ print_matrix_double_pointer(double **A)
   }
 }
 
-#define print_matrix_F77 F77_FUNC_(print_matrix, PRINT_MATRIX)
+#define print_matrix_F77 FC_GLOBAL_(print_matrix, PRINT_MATRIX)
 
 void print_matrix_F77(double *);
 
