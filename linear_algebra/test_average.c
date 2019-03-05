@@ -13,6 +13,7 @@ static void
 vector_average(struct vector *x_cc, struct vector *x_nc)
 {
   assert(x_nc->n == x_cc->n + 1);
+#pragma omp parallel for
   for (int i = 0; i < x_cc->n; i++) {
     VEC(x_cc, i) = .5 * (VEC(x_nc, i) + VEC(x_nc, i+1));
   }
