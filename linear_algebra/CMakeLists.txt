@@ -14,6 +14,8 @@ add_library(linalg linear_algebra.h
   matrix.c matrix_vector_mul.c matrix_matrix_mul.c
   matrix_vector_mul_f.F)
 target_compile_features(linalg PUBLIC c_std_99)
+# pull in the math library (libm)
+target_link_libraries(linalg PUBLIC m)
 
 link_libraries(linalg)
 add_executable(test_vector_dot test_vector_dot.c)
