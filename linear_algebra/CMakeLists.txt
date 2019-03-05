@@ -1,5 +1,5 @@
 
-cmake_minimum_required (VERSION 2.6)
+cmake_minimum_required (VERSION 3.9)
 
 project (LinearAlgebra)
 enable_testing()
@@ -8,6 +8,14 @@ enable_language(Fortran)
 include(FortranCInterface)
 FortranCInterface_HEADER(FC.h MACRO_NAMESPACE "FC_")
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
+
+find_package(OpenMP)
+if(OpenMP_C_FOUND)
+    link_libraries(OpenMP::OpenMP_C)
+endif()
+if(OpenMP_Fortran_FOUND)
+    link_libraries(OpenMP::OpenMP_Fortran)
+endif()
 
 add_library(linalg linear_algebra.h
   vector.c vector_dot.c vector_add.c
