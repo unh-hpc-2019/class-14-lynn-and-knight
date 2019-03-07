@@ -9,13 +9,7 @@ include(FortranCInterface)
 FortranCInterface_HEADER(FC.h MACRO_NAMESPACE "FC_")
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-find_package(OpenMP)
-if(OpenMP_C_FOUND)
-    link_libraries(OpenMP::OpenMP_C)
-endif()
-if(OpenMP_Fortran_FOUND)
-    link_libraries(OpenMP::OpenMP_Fortran)
-endif()
+find_package(OpenMP COMPONENTS C Fortran REQUIRED)
 
 add_library(linalg linear_algebra.h
   vector.c vector_dot.c vector_add.c
@@ -37,10 +31,18 @@ add_executable(test_data_layout_fortran
 add_executable(large_matrix_vector_mul large_matrix_vector_mul.c)
 
 add_executable(test_average test_average.c)
+target_link_libraries(test_average OpenMP::OpenMP_C)
+
 add_executable(test_average_basic test_average_basic.c)
+target_link_libraries(test_average_basic OpenMP::OpenMP_C)
+
 add_executable(test_average_fortran test_average_fortran.F90)
+target_link_libraries(test_average_fortran OpenMP::OpenMP_Fortran)
+
 add_executable(test_integrate test_integrate.c)
+
 add_executable(test_openmp test_openmp.c)
+target_link_libraries(test_openmp OpenMP::OpenMP_C)
 
 add_test(test_vector_dot test_vector_dot)
 add_test(test_vector_add test_vector_add)
