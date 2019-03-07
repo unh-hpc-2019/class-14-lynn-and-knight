@@ -35,10 +35,12 @@ add_executable(test_data_layout
 add_executable(test_data_layout_fortran
   test_data_layout_fortran.F print_matrix_fortran.F)
 add_executable(large_matrix_vector_mul large_matrix_vector_mul.c)
+
 add_executable(test_average test_average.c)
 add_executable(test_average_basic test_average_basic.c)
 add_executable(test_average_fortran test_average_fortran.F90)
 add_executable(test_integrate test_integrate.c)
+add_executable(test_openmp test_openmp.c)
 
 add_test(test_vector_dot test_vector_dot)
 add_test(test_vector_add test_vector_add)
