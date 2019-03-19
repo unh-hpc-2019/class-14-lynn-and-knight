@@ -30,6 +30,9 @@ add_executable(test_data_layout_fortran
   test_data_layout_fortran.F print_matrix_fortran.F)
 add_executable(large_matrix_vector_mul large_matrix_vector_mul.c)
 
+add_executable(test_hello hello_openmp.c)
+target_link_libraries(test_hello OpenMP::OpenMP_C)
+
 add_executable(test_average test_average.c)
 target_link_libraries(test_average OpenMP::OpenMP_C)
 
